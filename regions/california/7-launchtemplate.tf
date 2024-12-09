@@ -1,6 +1,6 @@
 resource "aws_launch_template" "california-vpc_LT" {
   name_prefix   = "california-vpc_LT"
-  image_id      = "ami-06ed60ed1369448bd"  
+  image_id      = "ami-038bba9a164eb3dc1"  
   instance_type = "t2.micro"
 
   # key_name = "MyLinuxBox"

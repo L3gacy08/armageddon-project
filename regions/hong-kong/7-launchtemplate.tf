@@ -1,9 +1,9 @@
 resource "aws_launch_template" "hong-kong-vpc-sg01-servers_LT" {
-  name_prefix   = "hong-kong-vpc-sg01-servers_LT"
-  image_id      = "ami-06ed60ed1369448bd"  
-  instance_type = "t2.micro"
+  name_prefix   = "hong-kong-vpc-sg01-servers-LT"
+  image_id      = "ami-06f707739f2271995"  
+  instance_type = "t3.micro"
 
-  key_name = "MyLinuxBox"
+  #key_name = "MyLinuxBox"
 
   vpc_security_group_ids = [aws_security_group.hong-kong-vpc-sg01-servers.id]
 

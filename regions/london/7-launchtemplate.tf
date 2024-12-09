@@ -1,6 +1,6 @@
 resource "aws_launch_template" "london-LT" {
   name_prefix   = "london-LT"
-  image_id      = "ami-06ed60ed1369448bd"  
+  image_id      = "ami-0c76bd4bd302b30ec"  
   instance_type = "t2.micro"
 
   #key_name = "MyLinuxBox"

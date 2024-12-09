@@ -44,7 +44,7 @@ resource "aws_subnet" "private-ap-northeast-1a" {
 
 resource "aws_subnet" "private-ap-northeast-1c" {
   vpc_id            = aws_vpc.lionsdenASG.id
-  cidr_block        = "10.140.20.0/24"
+  cidr_block        = "10.140.11.0/24"
   availability_zone = "ap-northeast-1c"
 
   tags = {

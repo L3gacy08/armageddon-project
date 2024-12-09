@@ -67,7 +67,7 @@ resource "aws_autoscaling_policy" "new-york-vpc_scaling_policy" {
 }
 
 # Enabling instance scale-in protection
-resource "aws_autoscaling_attachment" "new-york-vpc_asg_attachment" {
-  autoscaling_group_name = aws_autoscaling_group.new-york-vpc_asg.name
-  alb_target_group_arn   = aws_lb_target_group.new-york-vpc_tg.arn
-}
+# resource "aws_autoscaling_attachment" "new-york-vpc_asg_attachment" {
+#   autoscaling_group_name = aws_autoscaling_group.new-york-vpc_asg.name
+#   alb_target_group_arn   = aws_lb_target_group.new-york-vpc_tg.arn
+# }

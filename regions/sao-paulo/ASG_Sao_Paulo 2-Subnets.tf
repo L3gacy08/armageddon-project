@@ -2,7 +2,7 @@
 
 resource "aws_subnet" "public-sa-east-1a" {
   vpc_id                  = aws_vpc.sao_paulo_vpc.id
-  cidr_block              = "10.140.9.0/24"
+  cidr_block              = "10.140.49.0/24"
   availability_zone       = "sa-east-1a"
   map_public_ip_on_launch = true
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "public-sa-east-1a" {
 
 resource "aws_subnet" "public-sa-east-1b" {
   vpc_id                  = aws_vpc.sao_paulo_vpc.id
-  cidr_block              = "10.140.10.0/24"
+  cidr_block              = "10.140.50.0/24"
   availability_zone       = "sa-east-1b"
   map_public_ip_on_launch = true
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "public-sa-east-1b" {
 #these are for private
 resource "aws_subnet" "private-sa-east-1a" {
   vpc_id            = aws_vpc.sao_paulo_vpc.id
-  cidr_block        = "10.140.90.0/24"
+  cidr_block        = "10.140.51.0/24"
   availability_zone = "sa-east-1a"
 
   tags = {
@@ -44,7 +44,7 @@ resource "aws_subnet" "private-sa-east-1a" {
 
 resource "aws_subnet" "private-sa-east-1b" {
   vpc_id            = aws_vpc.sao_paulo_vpc.id
-  cidr_block        = "10.140.100.0/24"
+  cidr_block        = "10.140.52.0/24"
   availability_zone = "sa-east-1b"
 
   tags = {

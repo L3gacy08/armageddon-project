@@ -72,7 +72,7 @@ resource "aws_autoscaling_policy" "lionsdenASG_scaling_policy" {
 }
 
 # Enabling instance scale-in protection
-resource "aws_autoscaling_attachment" "lionsdenASG_asg_attachment" {
-  autoscaling_group_name = aws_autoscaling_group.lionsdenASG_asg.name
-  alb_target_group_arn   = aws_lb_target_group.lionsdenASG_tg.arn
-}
+# resource "aws_autoscaling_attachment" "lionsdenASG_asg_attachment" {
+#   autoscaling_group_name = aws_autoscaling_group.lionsdenASG_asg.name
+#   alb_target_group_arn   = aws_lb_target_group.lionsdenASG_tg.arn
+# }

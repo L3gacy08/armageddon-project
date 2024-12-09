@@ -40,126 +40,33 @@ resource "aws_ec2_transit_gateway" "lionsdenASG" {
 
 
 # VPC attachment for Tokyo Transit Gateway LionsdenASG
-resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = aws_vpc.lionsdenASG.id
-  subnet_ids = [aws_subnet.private-ap-northeast-1a.id, aws_subnet.private-ap-northeast-1c.id]
-
-
-  tags = {
-    Name = "tokyo-attachment"
-  }
-}
-
-# VPC attachment for London Transit Gateway LionsdenASG
-# resource "aws_ec2_transit_gateway_vpc_attachment" "london_attachment" {
-#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-#   vpc_id             = module.london.london-vpc.id
-#   subnet_ids         = [aws_subnet.private_eu_west_2a.id, aws_subnet.private_eu_west_2b.id]
-
-#   tags = {
-#     Name = "london-attachment"
-#   }
-# }
-
-# VPC attachment for Australia Transit Gateway LionsdenASG
-resource "aws_ec2_transit_gateway_vpc_attachment" "australia_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id = module.australia.vpc_id
-  subnet_ids = module.australia.private_subnet_ids
-
-
-  tags = {
-    Name = "australia-attachment"
-  }
-}
-
-# # VPC attachment for Tokyo
 # resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
 #   vpc_id             = aws_vpc.lionsdenASG.id
-#   subnet_ids         = [aws_subnet.private-ap-northeast-1a.id, aws_subnet.private-ap-northeast-1c.id]
+#   subnet_ids = [aws_subnet.private-ap-northeast-1a.id, aws_subnet.private-ap-northeast-1c.id]
+
 
 #   tags = {
 #     Name = "tokyo-attachment"
 #   }
 # }
 
-# # VPC attachment for Australia
+
+# VPC attachment for Australia Transit Gateway LionsdenASG
 # resource "aws_ec2_transit_gateway_vpc_attachment" "australia_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-#   vpc_id             = module.australia.vpc_id
-#   subnet_ids         = module.australia.private_subnet_ids
+#   vpc_id = module.australia.vpc_id
+#   subnet_ids = module.australia.private_subnet_ids
+
 
 #   tags = {
 #     Name = "australia-attachment"
 #   }
 # }
 
+
+
 # VPC attachment for California
-resource "aws_ec2_transit_gateway_vpc_attachment" "california_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = module.california.vpc_id
-  subnet_ids         = module.california.private_subnet_ids
-
-  tags = {
-    Name = "california-attachment"
-  }
-}
-
-# VPC attachment for Hong Kong
-resource "aws_ec2_transit_gateway_vpc_attachment" "hong_kong_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = module.hong_kong.vpc_id
-  subnet_ids         = module.hong_kong.private_subnet_ids
-
-  tags = {
-    Name = "hong-kong-attachment"
-  }
-}
-
-# VPC attachment for London
-resource "aws_ec2_transit_gateway_vpc_attachment" "london_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = module.london.vpc_id
-  subnet_ids         = module.london.private_subnet_ids
-
-  tags = {
-    Name = "london-attachment"
-  }
-}
-
-# VPC attachment for New York
-resource "aws_ec2_transit_gateway_vpc_attachment" "new_york_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = module.new_york.vpc_id
-  subnet_ids         = module.new_york.private_subnet_ids
-
-  tags = {
-    Name = "new-york-attachment"
-  }
-}
-
-# VPC attachment for São Paulo
-resource "aws_ec2_transit_gateway_vpc_attachment" "sao_paulo_attachment" {
-  transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  vpc_id             = module.sao_paulo.vpc_id
-  subnet_ids         = module.sao_paulo.private_subnet_ids
-
-  tags = {
-    Name = "sao-paulo-attachment"
-  }
-}
-
-
-
-
-
-
-
-
-
-# # VPC attachment for California Transit Gateway LionsdenASG
 # resource "aws_ec2_transit_gateway_vpc_attachment" "california_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
 #   vpc_id             = module.california.vpc_id
@@ -170,53 +77,172 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "sao_paulo_attachment" {
 #   }
 # }
 
-# # VPC attachment for Hong Kong Transit Gateway LionsdenASG
+# # VPC attachment for Hong Kong
 # resource "aws_ec2_transit_gateway_vpc_attachment" "hong_kong_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-#   vpc_id             = module.hong-kong.vpc_id
-#   subnet_ids         = module.hong-kong.private_subnet_ids
+#   vpc_id             = module.hong_kong.vpc_id
+#   subnet_ids         = module.hong_kong.private_subnet_ids
 
 #   tags = {
 #     Name = "hong-kong-attachment"
 #   }
 # }
 
-# # VPC attachment for New York Transit Gateway LionsdenASG
+# # VPC attachment for London
+# resource "aws_ec2_transit_gateway_vpc_attachment" "london_attachment" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   vpc_id             = module.london.vpc_id
+#   subnet_ids         = module.london.private_subnet_ids
+
+#   tags = {
+#     Name = "london-attachment"
+#   }
+# }
+
+# # VPC attachment for New York
 # resource "aws_ec2_transit_gateway_vpc_attachment" "new_york_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-#   vpc_id             = module.new-york.vpc_id
-#   subnet_ids         = module.new-york.private_subnet_ids
+#   vpc_id             = module.new_york.vpc_id
+#   subnet_ids         = module.new_york.private_subnet_ids
 
 #   tags = {
 #     Name = "new-york-attachment"
 #   }
 # }
 
-# # VPC attachment for Sao Paulo Transit Gateway LionsdenASG
+# # VPC attachment for São Paulo
 # resource "aws_ec2_transit_gateway_vpc_attachment" "sao_paulo_attachment" {
 #   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-#   vpc_id             = module.sao-paulo.vpc_id
-#   subnet_ids         = module.sau-paulo.private_subnet_ids
+#   vpc_id             = module.sao_paulo.vpc_id
+#   subnet_ids         = module.sao_paulo.private_subnet_ids
 
 #   tags = {
 #     Name = "sao-paulo-attachment"
 #   }
 # }
 
+
+# # Transit Gateway Route Table for Tokyo
+# resource "aws_ec2_transit_gateway_route_table" "tokyo_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "tokyo-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for New York
+# resource "aws_ec2_transit_gateway_route_table" "new_york_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "new-york-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for London
+# resource "aws_ec2_transit_gateway_route_table" "london_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "london-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for São Paulo
+# resource "aws_ec2_transit_gateway_route_table" "sao_paulo_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "sao-paulo-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for Australia
+# resource "aws_ec2_transit_gateway_route_table" "australia_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "australia-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for Hong Kong
+# resource "aws_ec2_transit_gateway_route_table" "hong_kong_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "hong-kong-tgw-rt"
+#   }
+# }
+
+# # Transit Gateway Route Table for California
+# resource "aws_ec2_transit_gateway_route_table" "california_rt" {
+#   transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   tags = {
+#     Name = "california-tgw-rt"
+#   }
+# }
+
+
+
+# # Tokyo route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "tokyo_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.tokyo_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo_rt.id
+# }
+
+# # New York route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "new_york_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.new_york_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.new_york_rt.id
+# }
+
+# # London route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "london_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.london_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.london_rt.id
+# }
+
+# # São Paulo route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "sao_paulo_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.sao_paulo_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.sao_paulo_rt.id
+# }
+
+# # Australia route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "australia_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.australia_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.australia_rt.id
+# }
+
+# # Hong Kong route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "hong_kong_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.hong_kong_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.hong_kong_rt.id
+# }
+
+# # California route Association
+# resource "aws_ec2_transit_gateway_route_table_association" "california_assoc" {
+#   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.california_attachment.id
+#   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.california_rt.id
+# }
+
+
+
+
+
+
+
+
 # Route Table for Transit Gateway LionsdenASG
-resource "aws_route_table" "lionsdenASG_RT" {
-  vpc_id = aws_vpc.lionsdenASG.id
+# resource "aws_route_table" "lionsdenASG_RT" {
+#   vpc_id = aws_vpc.lionsdenASG.id
 
-  # Route for VPC-to-VPC traffic through Transit Gateway
-  route {
-    cidr_block         = "10.140.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
-  }
+#   # Route for VPC-to-VPC traffic through Transit Gateway
+#   route {
+#     cidr_block         = "10.140.0.0/16"
+#     transit_gateway_id = aws_ec2_transit_gateway.lionsdenASG.id
+#   }
 
-  tags = {
-    Name = "lionsdenASG-RT"
-  }
-}
+#   tags = {
+#     Name = "lionsdenASG-RT"
+#   }
+# }
 
 
 # Network ACL for Transit Gateway LionsdenASG
@@ -275,48 +301,6 @@ resource "aws_default_network_acl" "lionsdenASG_NACL" {
 
   tags = {
     Name    = "lionsdenASG-NACL"
-    Service = "application1"
-    Owner   = "Luke"
-    Planet  = "Musafar"
-  }
-}
-
-
-
-# Security Group for Transit Gateway LionsdenASG
-resource "aws_security_group" "lionsdenASG_sg02_LB01" {
-  name        = "lionsdenASG-sg02-LB01"
-  description = "SG for transit gateway"
-  vpc_id      = aws_vpc.lionsdenASG.id
-
-  # Ingress for HTTP (Restrict to internal traffic)
-  ingress {
-    description = "Allow HTTP from internal VPC"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["10.140.0.0/16"]
-  }
-
-  # Ingress for SSH (Restrict to internal traffic)
-  ingress {
-    description = "Allow SSH from internal VPC"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["10.140.0.0/16"]
-  }
-
-  # Block all outbound traffic
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = []
-  }
-
-  tags = {
-    Name    = "lionsdenASG-sg02-LB01"
     Service = "application1"
     Owner   = "Luke"
     Planet  = "Musafar"

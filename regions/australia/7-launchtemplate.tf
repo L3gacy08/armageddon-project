@@ -1,6 +1,6 @@
 resource "aws_launch_template" "australia-vpc_LT" {
   name_prefix   = "australia-vpc_LT"
-  image_id      = "ami-06ed60ed1369448bd"  
+  image_id      = "ami-0146fc9ad419e2cfd"  
   instance_type = "t2.micro"
 
   # key_name = "MyLinuxBox"

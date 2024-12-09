@@ -1,6 +1,6 @@
 resource "aws_launch_template" "new-york-vpc_LT" {
   name_prefix   = "new-york-vpc_LT"
-  image_id      = "ami-06ed60ed1369448bd"  
+  image_id      = "ami-0453ec754f44f9a4a"  
   instance_type = "t2.micro"
 
   # key_name = "MyLinuxBox"

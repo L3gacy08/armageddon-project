@@ -1,5 +1,5 @@
 resource "aws_autoscaling_group" "california-vpc_asg" {
-  name_prefix           = "california-vpc-auto-scaling-group-"
+  name_prefix           = "california-vpc-auto-scaling-group"
   min_size              = 3
   max_size              = 15
   desired_capacity      = 6
@@ -67,7 +67,7 @@ resource "aws_autoscaling_policy" "california-vpc_scaling_policy" {
 }
 
 # Enabling instance scale-in protection
-resource "aws_autoscaling_attachment" "california-vpc_asg_attachment" {
-  autoscaling_group_name = aws_autoscaling_group.california-vpc_asg.name
-  alb_target_group_arn   = aws_lb_target_group.california-vpc_tg.arn
-}
+# resource "aws_autoscaling_attachment" "california-vpc_asg_attachment" {
+#   autoscaling_group_name = aws_autoscaling_group.california-vpc_asg.name
+#   alb_target_group_arn   = aws_lb_target_group.california-vpc_tg.arn
+# }

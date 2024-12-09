@@ -3,7 +3,7 @@ resource "aws_launch_template" "lionsdenASG_LT" {
   image_id      = "ami-0c820c196a818d66a"  
   instance_type = "t2.micro"
 
-  key_name = "MyLinuxBox"
+  #key_name = "MyLinuxBox"
 
   vpc_security_group_ids = [aws_security_group.lionsdenASG-sg01-servers.id]
 
