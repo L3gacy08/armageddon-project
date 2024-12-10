@@ -1,5 +1,5 @@
 resource "aws_autoscaling_group" "new-york-vpc_asg" {
-  name_prefix           = "new-york-vpc-auto-scaling-group-"
+  name_prefix           = "new-york-vpc-auto-scaling-group"
   min_size              = 3
   max_size              = 15
   desired_capacity      = 6

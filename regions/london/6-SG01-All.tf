@@ -25,7 +25,7 @@ resource "aws_security_group" "app-london-sg" {
     from_port   = 514
     to_port     = 514
     protocol    = "udp"
-    cidr_blocks = ["10.140.0.0/16"]
+    cidr_blocks = ["10.140.0.0/20"]
   }
 
   egress {

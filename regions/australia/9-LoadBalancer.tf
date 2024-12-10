@@ -1,5 +1,5 @@
 resource "aws_lb" "australia-vpc_alb" {
-  name               = "australia-vpc-load-balancer"
+  name               = "australia-vpc-load-balancer-${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.australia-vpc-sg02-LB01.id]

@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "london_tg" {
-  name     = "london-target-group"
+  name     = "london-target-group${random_string.suffix.result}"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.london-vpc.id

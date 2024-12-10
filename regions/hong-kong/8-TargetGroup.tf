@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "hong-kong-vpc_tg" {
-  name     = "hong-kong-vpc-target-group"
+  name     = "hong-kong-vpc-target-group${random_string.suffix.result}"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.hong-kong-vpc.id

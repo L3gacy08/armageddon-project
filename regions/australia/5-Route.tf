@@ -73,3 +73,15 @@ resource "aws_route_table_association" "public-ap-southeast-2b" {
   route_table_id = aws_route_table.public.id
 }
 
+
+# Route to Sydney VPC
+# resource "aws_route" "australia_to_tokyo_route" {
+#   route_table_id            = aws_route_table.private.id
+#   destination_cidr_block    = aws_vpc.lionsdenASG.cidr_block
+#   vpc_peering_connection_id = aws_vpc_peering_connection.tokyo_australia_peering.id
+# }
+
+# module "tokyo" {
+#   source = "../tokyo/"
+  
+# }

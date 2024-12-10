@@ -1,5 +1,5 @@
 resource "aws_lb" "california-vpc_alb" {
-  name               = "california-vpc-load-balancer"
+  name               = "california-vpc-load-balancer${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.california-vpc-sg02-LB01.id]

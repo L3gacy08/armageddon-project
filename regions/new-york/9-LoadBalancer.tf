@@ -1,5 +1,5 @@
 resource "aws_lb" "new-york-vpc_alb" {
-  name               = "new-york-vpc-load-balancer"
+  name               = "new-york-vpc-load-balancer${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.new-york-vpc-sg02-LB01.id]

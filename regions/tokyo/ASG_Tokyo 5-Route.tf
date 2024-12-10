@@ -71,3 +71,18 @@ resource "aws_route_table_association" "public-ap-northeast-1c" {
   subnet_id      = aws_subnet.public-ap-northeast-1c.id
   route_table_id = aws_route_table.public.id
 }
+
+
+# Route to Sydney VPC
+# resource "aws_route" "tokyo_to_australia-route" {
+#   route_table_id            = aws_route_table.tokyo_private_rt.id
+#   destination_cidr_block    = aws_vpc.australia-vpc.cidr_block
+#   vpc_peering_connection_id = aws_vpc_peering_connection.tokyo_australia-peering.id
+# }
+
+# # Route to New York VPC
+# resource "aws_route" "tokyo_to_newyork_route" {
+#   route_table_id            = aws_route_table.tokyo_private_rt.id
+#   destination_cidr_block    = aws_vpc.new-york-vpc.cidr_block
+#   vpc_peering_connection_id = aws_vpc_peering_connection.tokyo_newyork_peering.id
+# }

@@ -1,5 +1,5 @@
 resource "aws_lb" "lionsdenASG_alb" {
-  name               = "lionsdenASG-load-balancer"
+  name               = "lionsdenASG-load-balancer-${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lionsdenASG-sg02-LB01.id]

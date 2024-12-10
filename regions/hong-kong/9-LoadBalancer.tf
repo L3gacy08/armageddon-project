@@ -1,5 +1,5 @@
 resource "aws_lb" "hong-kong-vpc_alb" {
-  name               = "app1-load-balancer"
+  name               = "app1-load-balancer${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.hong-kong-vpc-sg02-LB01.id]

@@ -1,5 +1,5 @@
 resource "aws_lb" "london-lb" {
-  name               = "app1-load-balancer"
+  name               = "london-load-balancer${random_string.suffix.result}"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.app-london-sg-lb.id]
@@ -11,8 +11,8 @@ resource "aws_lb" "london-lb" {
 #Lots of death and suffering here, make sure it's false
 
   tags = {
-    Name    = "App1LoadBalancer"
-    Service = "App1"
+    Name    = "londonLoadBalancer"
+    Service = "london"
     Owner   = "User"
     Project = "Web Service"
   }
@@ -53,5 +53,5 @@ resource "aws_lb_listener" "http" {
 
 output "lb_dns_name" {
   value       = aws_lb.london-lb.dns_name
-  description = "The DNS name of the App1 Load Balancer."
+  description = "The DNS name of the london Load Balancer."
 }

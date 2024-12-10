@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "australia-vpc_tg" {
-  name     = "australia-vpc-target-group"
+  name     = "australia-vpc-target-group-${random_string.suffix.result}"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.australia-vpc.id
